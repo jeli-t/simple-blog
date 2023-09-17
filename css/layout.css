@@ -1,0 +1,33 @@
+.navbar {
+    height: 60px;
+    width: 100%;
+    background-color: var(--primary2);
+    border-bottom: 2px solid var(--primary4);
+}
+
+.wrapper {
+    flex: 1;
+    width: 100%;
+    background-color: var(--primary1);
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    flex: 1;
+    margin: auto;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    width: 60%;
+    background-color: var(--primary1);
+    border-radius: 6px;
+    box-shadow: 0 8px 16px 10px var(--primary4), 0 12px 40px 10px var(--primary4);
+}
+
+.footer {
+    height: 40px;
+    width: 100%;
+    background-color: var(--primary2);
+    border-top: 2px solid var(--primary4);
+}
