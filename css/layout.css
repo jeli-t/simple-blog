@@ -17,12 +17,10 @@
 .content {
     flex: 1;
     margin: auto;
-    margin-top: 60px;
-    margin-bottom: 60px;
-    width: 60%;
-    background-color: var(--primary1);
-    border-radius: 6px;
-    box-shadow: 0 8px 16px 10px var(--primary4), 0 12px 40px 10px var(--primary4);
+    margin-top: 80px;
+    margin-bottom: 80px;
+    width: 70%;
+    background-color: var(--primary2);
 }
 
 .footer {
@@ -30,4 +28,13 @@
     width: 100%;
     background-color: var(--primary2);
     border-top: 2px solid var(--primary4);
+}
+
+
+@media (max-width:600px) {
+    .content {
+        width: 90%;
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
 }
