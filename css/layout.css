@@ -1,8 +1,8 @@
-.navbar {
-    height: 60px;
+.nav {
+    height: 50px;
     width: 100%;
-    background-color: var(--primary2);
-    border-bottom: 2px solid var(--primary4);
+    background-color: #4d4d4d;
+    position: relative;
 }
 
 .wrapper {
