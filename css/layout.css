@@ -24,10 +24,9 @@
 }
 
 .footer {
-    height: 40px;
     width: 100%;
-    background-color: var(--primary2);
-    border-top: 2px solid var(--primary4);
+    font-size: 18px;
+    color: var(--primary1);
 }
 
 

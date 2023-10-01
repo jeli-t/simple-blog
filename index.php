@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/main.css">
-    <title>Simple CMS</title>
+    <title>Simple Blog</title>
 </head>
 <body>
 
@@ -12,7 +12,7 @@
         <input type="checkbox" id="nav-check">
         <div class="nav-header">
             <div class="nav-title">
-                Simple CMS
+                Simple Blog
             </div>
         </div>
         <div class="nav-btn">
@@ -65,7 +65,7 @@
         </div>
 
         <div class="footer">
-            <h2>Footer</h2>
+            Simple Blog is a minimalist CMS blogging platform built with PHP. More info and source code on <a href="https://github.com/jeli-t/simple-blog">GitHub</a>
         </div>
 
     </div>
