@@ -1,0 +1,22 @@
+.log {
+    width: 800px;
+    padding: 20px;
+    border: 1px solid #333;
+    margin: 20px auto;
+}
+
+.log.success {
+    background-color: lightgreen;
+}
+
+.log.error {
+    background-color: lightcoral;
+}
+
+.log.warning {
+    background-color: lightsalmon;
+}
+
+.log.info {
+    background-color: lightskyblue;
+}
