@@ -1,5 +1,3 @@
-<h1>Add new post</h1>
-
 <?php
 
     if( isset( $_SESSION[ 'id' ] ) ) {
@@ -31,17 +29,23 @@
         if( $form ) {
 ?>
 
-<form action="" method="post">
-    <label>Title: </label><input type="text" name="title" maxlength="100" require><br>
-    <label>Description:</label><textarea name="short_desc" maxlength="500"></textarea><br>
-    <input type="submit" value="Add post" name="test">
-</form>
+<div class="center">
+    <H2>What are you going to write today?</H2>
+    <form action="" method="post" class="newpost">
+        <label>Title: </label>
+        <input type="text" name="title" maxlength="100" require>
+        <label>Description:</label>
+        <textarea name="short_desc" maxlength="500"></textarea>
+        <input type="submit" value="Add post" name="test">
+    </form>
+</div>
 
 <?php
         }
 
     } else {
         addlog( 'warning', 'Only for loged users!' );
+        redirect(0, '?page=login');
     }
 
 ?>

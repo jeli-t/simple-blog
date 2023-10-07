@@ -28,7 +28,7 @@
                 <a href="?page=login">Login</a>
                 <a href="?page=register">Register</a>
             <?php } else { ?>
-                <a href="?page=addpost">Add post</a>
+                <a href="?page=newpost">Add post</a>
                 <a href="?page=account">Account</a>
                 <a href="?page=logout">Logout</a>
             <?php } ?>

@@ -1,0 +1,16 @@
+.newpost {
+    margin-top: 50px;
+}
+
+form > textarea {
+    background-color: var(--primary2);
+    border: 0px;
+    border-bottom: 2px solid var(--primary5);
+    display: block;
+    font-size: 20px;
+    margin-bottom: 30px;
+    margin-top: 4px;
+    height: 200px;
+    width: 100%;
+    resize: none;
+}

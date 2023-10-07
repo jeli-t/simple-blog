@@ -9,8 +9,8 @@ form > label {
     font-size: 20px;
 }
 
-form > input,
-form > textarea {
+form > input {
+    background-color: var(--primary2);
     border: 0px;
     border-bottom: 2px solid var(--primary5);
     display: block;
