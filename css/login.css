@@ -1,0 +1,36 @@
+.login, .register {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+form > label {
+    display: block;
+    text-align: left;
+    font-size: 20px;
+}
+
+form > input,
+form > textarea {
+    border: 0px;
+    border-bottom: 2px solid var(--primary5);
+    display: block;
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+form > input[ type="submit" ] {
+    background-color: var(--primary2);
+    border: 1px solid var(--primary4);
+    border-radius: 5px;
+    display: block;
+    width: 200px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+form > input[ type="submit" ]:hover {
+    background-color: var(--primary3);
+    border: 1px solid var(--primary5);
+    color: var(--primary2);
+    transition: ease-in-out 0.2s;
+}

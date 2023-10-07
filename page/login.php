@@ -1,5 +1,3 @@
-<h1>Login</h1>
-
 <?php
 
     if( !isset( $_SESSION[ 'id' ] ) ) {
@@ -42,17 +40,26 @@
 
 ?>
 
-<form action="" method="post">
-    <label>Username</label><input type="text" name="nick"><br>
-    <label>Password:</label><input type="password" name="pass"><br>
-    <input type="submit" value="Login" name="test">
-</form>
+<div class='center'>
+    <H1>Welcome to Simple Blog!</H1>
+    <H2>Please login to your account</H2>
+    <form action="" method="post" class="login">
+        <label>Username:</label>
+        <input type="text" name="nick">
+        <label>Password:</label>
+        <input type="password" name="pass">
+        <input type="submit" value="Login" name="test">
+    </form>
+    <H3>Don't have an account yet?</H3>
+    <a href="?page=register" class="link">Register here</a>
+</div>
 
 <?php
 
         }
 
     } else {
+        redirect(0);
         addlog( 'warning', 'You are already logged in!' );
     }
 

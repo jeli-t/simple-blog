@@ -2,6 +2,7 @@
 @import url('variables.css');
 @import url('layout.css');
 @import url('navbar.css');
+@import url('login.css');
 @import url('footer.css');
 
 
@@ -32,4 +33,18 @@ h2 {
     margin-left: 10px;
     font-size: 30px;
     font-weight: 400;
+}
+
+h3 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+a.link {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 700;
+    text-decoration: underline;
+    color: var(--primary5);
 }

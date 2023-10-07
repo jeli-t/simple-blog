@@ -1,5 +1,3 @@
-<h1>Register</h1>
-
 <?php
 
     if( !isset( $_SESSION[ 'id' ] ) ) {
@@ -59,12 +57,18 @@
         if( $form ) {
 ?>
 
-<form action="" method="post">
-    <label>Username:</label><input type="text" name="nick"><br>
-    <label>Password:</label><input type="password" name="pass"><br>
-    <label>Repeat password:</label><input type="password" name="pass_conf"><br>
-    <input type="submit" value="Register" name="test">
-</form>
+<div class="center">
+    <H1>Welcome to Simple Blog!</H1>
+    <H2>Register your new account</H2>
+    <form action="" method="post" class="register">
+        <label>Username:</label><input type="text" name="nick"><br>
+        <label>Password:</label><input type="password" name="pass"><br>
+        <label>Repeat password:</label><input type="password" name="pass_conf"><br>
+        <input type="submit" value="Register" name="test">
+    </form>
+    <H3>Already have an account?</H3>
+    <a href="?page=login" class='link'>Login here</a>
+</div>
 
 <?php
 

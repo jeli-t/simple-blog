@@ -1,4 +1,4 @@
-<div class="content">
+<div class='content'>
     <h1>Content</h1>
     <h1>Content</h1>
     <h1>Content</h1>
