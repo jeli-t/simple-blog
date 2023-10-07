@@ -14,7 +14,7 @@
                 $result = mysqli_query( $connect, $query );
                 if( $result ) {
                     addlog( 'success', 'New post created. Redirecting to editing page.' );
-                    redirect( 3, '?page=editpost&id=' . mysqli_insert_id( $connect ) );
+                    redirect( 2, '?page=editpost&id=' . mysqli_insert_id( $connect ) );
                     $form = false;
                 } else {
                     addlog( 'error', 'Failed to add new post!' );

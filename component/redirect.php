@@ -1,6 +1,6 @@
 <?php
 
-function redirect( $time = 3, $url = '?' ) {
+function redirect( $time = 2, $url = '?' ) {
     header( 'refresh:' . $time . ';url=' . $url );
 }
 

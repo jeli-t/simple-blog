@@ -26,13 +26,13 @@
                         $form = false;
 
                         if( $result ) {
-                            addlog( 'success', 'New user registered.' );
 
                             $query = 'INSERT INTO `blog` ( `id_user` ) VALUES ( ' . mysqli_insert_id( $connect ) . ' )';
                             $result = mysqli_query( $connect, $query );
 
                             if( $result ) {
-                                addlog( 'success', 'New blog created.' );
+                                addlog( 'success', 'New user registered.' );
+                                redirect();
                             } else {
                                 addlog( 'error', 'Failed to create new blog!' );
                             }
@@ -72,8 +72,16 @@
 
 <?php
 
+        } else {
+
+?>
+
+<div class="center" style="background-color: var(--primary3)">
+    <h1 style="font-size: 80px; color: var(--primary1)">Simple Blog</h1>
+</div>
+
+<?php
         }
-        
     } else {
         addlog( 'warning', 'You are logged in!' );
     }

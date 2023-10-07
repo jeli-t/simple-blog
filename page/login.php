@@ -56,8 +56,16 @@
 
 <?php
 
-        }
+        } else {
 
+?>
+
+<div class="center" style="background-color: var(--primary3)">
+    <h1 style="font-size: 80px; color: var(--primary1)">Simple Blog</h1>
+</div>
+
+<?php
+        }
     } else {
         redirect(0);
         addlog( 'warning', 'You are already logged in!' );
