@@ -29,7 +29,7 @@
                 <a href="?page=register">Register</a>
             <?php } else { ?>
                 <a href="?page=newpost">Add post</a>
-                <a href="?page=account">Account</a>
+                <?php echo('<a href="?page=author&id=' . getCurentUserBlogId() . '">My posts</a> ') ?>
                 <a href="?page=logout">Logout</a>
             <?php } ?>
         </div>
