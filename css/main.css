@@ -50,3 +50,14 @@ a.link {
     text-decoration: underline;
     color: var(--primary5);
 }
+
+
+@media (max-width:600px) {
+    h1 {
+        font-size: 26px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+}

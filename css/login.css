@@ -1,12 +1,12 @@
 .login, .register {
-    margin-top: 50px;
-    margin-bottom: 50px;
+    margin-top: 40px;
+    margin-bottom: 40px;
 }
 
 form > label {
     display: block;
     text-align: left;
-    font-size: 20px;
+    font-size: 30px;
 }
 
 form > input {
@@ -14,8 +14,8 @@ form > input {
     border: 0px;
     border-bottom: 2px solid var(--primary5);
     display: block;
-    font-size: 20px;
-    margin-bottom: 30px;
+    font-size: 25px;
+    margin-bottom: 25px;
 }
 
 form > input[ type="submit" ] {
@@ -33,4 +33,15 @@ form > input[ type="submit" ]:hover {
     border: 1px solid var(--primary5);
     color: var(--primary2);
     transition: ease-in-out 0.2s;
+}
+
+
+@media (max-width:600px) {
+    form > label {
+        font-size: 24px;
+    }
+
+    form > input {
+        font-size: 20px;
+    }
 }
