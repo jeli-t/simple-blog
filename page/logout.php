@@ -1,5 +1,5 @@
-<div class="center" style="background-color: var(--primary3)">
-    <h1 style="font-size: 80px; color: var(--primary1)">Simple Blog</h1>
+<div class="center">
+    <h1 style="font-size: 80px;">Simple Blog</h1>
 </div>
 
 <?php
