@@ -41,11 +41,20 @@
 </div>
 
 <?php
-        }
 
+        }
     } else {
         addlog( 'warning', 'Only for loged users!' );
-        redirect(0, '?page=login');
+        redirect(2, '?page=login');
+
+?>
+
+<div class="center">
+    <h1 style="font-size: 80px;">Simple Blog</h1>
+</div>
+
+<?php
+
     }
 
 ?>
