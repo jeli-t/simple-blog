@@ -1,0 +1,19 @@
+.post {
+    margin: 20px 20px;
+    padding: 5px 5px;
+    background-color: var(--primary2);
+    margin-bottom: 50px;
+    border-radius: 4px;
+    overflow-x: hidden;
+}
+
+.post:hover {
+    scale: 1.02;
+    transition: ease-in-out 0.2s;
+    background-color: var(--primary1);
+}
+
+.preview {
+    margin: 5px 0px;
+    border-top: 2px solid var(--primary5);
+}

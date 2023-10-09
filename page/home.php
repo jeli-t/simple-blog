@@ -1,15 +1,21 @@
 <div class='content'>
 
 <?php
-    $query = 'SELECT * FROM `post`';
+    $query = 'SELECT * FROM `post` ORDER BY `add_at` DESC';
     $result = mysqli_query( $connect, $query );
 
     if($result->num_rows > 0) {
         while($row = $result->fetch_assoc()) {
             $author = getAuthor($row['id_blog']);
-            echo('<H3>Author: ' . $author . '</H3>');
-            echo('<H1>Title: ' . $row['title'] . '</H1>');
-            echo('<H2>Description: ' . $row['short_desc'] . '</H2>');
+
+            echo('<div class="post">');
+            echo('<H2>' . $author . '</H2>');
+            echo('<div class="preview">');
+            echo('<H1>' . $row['title'] . '</H1>');
+            echo('<H2>' . $row['short_desc'] . '</H2>');
+            echo('</div>');
+            echo('</div>');
+
         }
 
     } else {
