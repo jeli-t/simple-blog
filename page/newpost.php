@@ -15,6 +15,12 @@
                 if( $result ) {
                     addlog( 'success', 'New post created. Redirecting to editing page.' );
                     redirect( 2, '?page=editpost&id=' . mysqli_insert_id( $connect ) );
+
+?>
+    <div class="center">
+        <h1 style="font-size: 80px;">Simple Blog</h1>
+    </div>
+<?php
                     $form = false;
                 } else {
                     addlog( 'error', 'Failed to add new post!' );

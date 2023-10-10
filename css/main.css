@@ -43,6 +43,16 @@ h3 {
     font-weight: 500;
 }
 
+a {
+    text-decoration: none;
+    color: var(--primary5);
+}
+
+a:hover {
+    transition: ease-in-out 0.1s;
+    color: var(--primary4);
+}
+
 a.link {
     margin: 0;
     font-size: 20px;

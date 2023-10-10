@@ -9,12 +9,17 @@
             $author = getAuthor($row['id_blog']);
 
             echo('<div class="post">');
+            echo('<a href="?page=author&id=' . $row['id_blog'] . '">');
             echo('<H2>' . $author . '</H2>');
+            echo('</a>');
             echo('<div class="preview">');
+            echo('<a href="?page=post&id=' . $row['id'] . '">');
             echo('<H1>' . $row['title'] . '</H1>');
             echo('<H2>' . $row['short_desc'] . '</H2>');
+            echo('</a>');
             echo('</div>');
             echo('</div>');
+            echo('</a>');
 
         }
 
