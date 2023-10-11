@@ -30,14 +30,22 @@
             }
 
             if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                // Iterate through each key-value pair in the $_POST array
+                $order = 0;
+                $type = 0;
+                $content = 0;
+
                 foreach ($_POST as $key => $value) {
-                    // Perform any necessary validation or processing here
-                    // For demonstration purposes, we are just echoing the key and value
-                    echo "$key: $value <br>";
+                    if (substr($key, 0, 4) == "type") {
+                        $order = substr($key, -1);
+                        $type = $value;
+                    } elseif (substr($key, 0, 7) == "content") {
+                        $content = $value;
+
+                        $query = 'INSERT INTO `component` VALUES ( NULL, ' . $_GET[ 'id' ] . ', "' . $type . '", ' . $order . ', "' . $content .'" );';
+                        $result = mysqli_query( $connect, $query );
+                    }
                 }
             }
-
         }
 
         if( $edit ) {
@@ -53,12 +61,11 @@
 
             $query = 'SELECT * FROM `component` WHERE `id_post` = ' . $_GET[ 'id' ] . ' ORDER BY `order` ASC';
             $result = mysqli_query( $connect, $query );
-            $current_component = 1;
+            $current_component = 0;
 
             if($result->num_rows > 0) {
                 while($row = $result->fetch_assoc()) {
                     $current_component = $row['order'];
-                    echo('<script>var current_component = ' . $current_component . ';</script>');
 
                     if($row['type'] == 'H1') {
                         echo('<H1>' . $row['content'] . '</H1>');
@@ -72,6 +79,7 @@
 
                 }
             }
+            echo('<script>var current_component = ' . $current_component . ';</script>');
 
 ?>
 
@@ -126,7 +134,7 @@ function newComponent() {
     var typeOption4 = document.createElement('input');
     typeOption4.type = 'radio';
     typeOption4.name = `type${current_component}`;
-    typeOption4.value = 'H3';
+    typeOption4.value = 'p';
     componentType.appendChild(typeOption4);
 
     var typeLabel4 = document.createElement('label');
