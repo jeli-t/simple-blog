@@ -22,6 +22,8 @@ form > textarea {
     justify-content: center;
     width: 100%;
     height: 200px;
+    margin-top: 50px;
+    margin-bottom: 50px;
     padding: 0 0;
     transition: 0.2s, color;
     font-size: 100px;
@@ -37,8 +39,35 @@ form > textarea {
     background-color: var(--primary2);
     width: 100%;
     height: 200px;
-    margin-bottom: 100px;
+    margin-top: 50px;
+    margin-bottom: 50px;
     display: flex;
+    flex-direction: column;
+}
+
+.component_type {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: start;
+}
+
+.component_type label {
+    font-size: 24px;
+    line-height: 50px;
+    margin-right: 20px;
+}
+
+.component_type input {
+    font-size: 24px;
+    margin-left: 20px;
+}
+
+.component_content {
+    width: 100%;
+    flex: 1;
+    resize: none;
+    font-size: 20px;
 }

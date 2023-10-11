@@ -24,13 +24,15 @@
     if($result->num_rows > 0) {
         while($row = $result->fetch_assoc()) {
 
-            if($row['type'] == 1) {
+            if($row['type'] == 'H1') {
                 echo('<H1>' . $row['content'] . '</H1>');
-            } elseif ($row['type'] == 2) {
+            } elseif ($row['type'] == 'H2') {
                 echo('<H2>' . $row['content'] . '</H2>');
-            } elseif ($row['type'] == 3) {
+            } elseif ($row['type'] == 'H3') {
                 echo('<H3>' . $row['content'] . '</H3>');
-            } 
+            } elseif ($row['type'] == 'p') {
+                echo('<p>' . $row['content'] . '</p>');
+            }
 
         }
 

@@ -1,7 +1,8 @@
 <?php
 
+    $edit = false;
+
     if( isset( $_SESSION[ 'id' ] ) ) {
-        $form = false;
         $blog_id = getCurentUserBlogId();
 
         if( isset( $_GET[ 'id' ] ) ) {
@@ -13,7 +14,7 @@
                 $title = $row['title'];
                 $author = getAuthor($row['id_blog']);
                 $short_desc = $row['short_desc'];
-                $form = true;
+                $edit = true;
                 }
             } else {
                 addlog( 'error', 'Permission denied' );
@@ -30,7 +31,7 @@
 
         }
 
-        if( $form ) {
+        if( $edit ) {
 
             echo('<div class="content">');
             echo('<div class="post" style="margin: 0px 0px; margin-bottom: 100px">');
@@ -41,17 +42,97 @@
             echo('</div>');
             echo('</div>');
 
+            $query = 'SELECT * FROM `component` WHERE `id_post` = ' . $_GET[ 'id' ] . ' ORDER BY `order` ASC';
+            $result = mysqli_query( $connect, $query );
+            $current_component = 1;
+
+            if($result->num_rows > 0) {
+                while($row = $result->fetch_assoc()) {
+                    $current_component = $row['order'];
+                    echo('<script>var current_component = ' . $current_component . ';</script>');
+
+                    if($row['type'] == 'H1') {
+                        echo('<H1>' . $row['content'] . '</H1>');
+                    } elseif ($row['type'] == 'H2') {
+                        echo('<H2>' . $row['content'] . '</H2>');
+                    } elseif ($row['type'] == 'H3') {
+                        echo('<H3>' . $row['content'] . '</H3>');
+                    } elseif ($row['type'] == 'p') {
+                        echo('<p>' . $row['content'] . '</p>');
+                    } 
+
+                }
+            }
+
 ?>
 
 <div id="components"></div>
-<div class="new_component" onclick="newComponent()">
-    <p>+</p>
-</div>
+<form action="" method="post">
+    <div class="new_component" onclick="newComponent()">
+        <p>+</p>
+    </div>
+    <input type="submit" value="Save" name="test">
+</form>
 </div>
 
 <script>
 function newComponent() {
-    document.getElementById("components").insertAdjacentHTML("beforeend", "<div class='component_form'>Here will be form</div>");
+    current_component ++;
+
+    var componentForm = document.createElement('div');
+    componentForm.className = "component_form";
+
+    var componentType = document.createElement('div');
+    componentType.className = 'component_type';
+
+    var typeOption1 = document.createElement('input');
+    typeOption1.type = 'radio';
+    typeOption1.name = `type${current_component}`;
+    typeOption1.value = 'H1';
+    componentType.appendChild(typeOption1);
+
+    var typeLabel1 = document.createElement('label');
+    typeLabel1.textContent = 'H1';
+    componentType.appendChild(typeLabel1);
+
+    var typeOption2 = document.createElement('input');
+    typeOption2.type = 'radio';
+    typeOption2.name = `type${current_component}`;
+    typeOption2.value = 'H2';
+    componentType.appendChild(typeOption2);
+
+    var typeLabel2 = document.createElement('label');
+    typeLabel2.textContent = 'H2';
+    componentType.appendChild(typeLabel2);
+
+    var typeOption3 = document.createElement('input');
+    typeOption3.type = 'radio';
+    typeOption3.name = `type${current_component}`;
+    typeOption3.value = 'H3';
+    componentType.appendChild(typeOption3);
+
+    var typeLabel3 = document.createElement('label');
+    typeLabel3.textContent = 'H3';
+    componentType.appendChild(typeLabel3);
+
+    var typeOption4 = document.createElement('input');
+    typeOption4.type = 'radio';
+    typeOption4.name = `type${current_component}`;
+    typeOption4.value = 'H3';
+    componentType.appendChild(typeOption4);
+
+    var typeLabel4 = document.createElement('label');
+    typeLabel4.textContent = 'p';
+    componentType.appendChild(typeLabel4);
+
+    componentForm.appendChild(componentType);
+
+    var componentContent = document.createElement('textarea');
+    componentContent.className = 'component_content';
+    componentContent.name = `content${current_component}`;
+    componentForm.appendChild(componentContent);
+
+    document.getElementById("components").appendChild(componentForm);
 }
 </script>
 
