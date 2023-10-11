@@ -29,6 +29,15 @@
 
             }
 
+            if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                // Iterate through each key-value pair in the $_POST array
+                foreach ($_POST as $key => $value) {
+                    // Perform any necessary validation or processing here
+                    // For demonstration purposes, we are just echoing the key and value
+                    echo "$key: $value <br>";
+                }
+            }
+
         }
 
         if( $edit ) {
@@ -66,14 +75,13 @@
 
 ?>
 
-<div id="components"></div>
 <form action="" method="post">
+    <div id="components"></div>
     <div class="new_component" onclick="newComponent()">
         <p>+</p>
     </div>
     <input type="submit" value="Save" name="test">
 </form>
-</div>
 
 <script>
 function newComponent() {
@@ -132,7 +140,7 @@ function newComponent() {
     componentContent.name = `content${current_component}`;
     componentForm.appendChild(componentContent);
 
-    document.getElementById("components").appendChild(componentForm);
+    document.getElementById("components").insertAdjacentElement("beforeend", componentForm);
 }
 </script>
 
